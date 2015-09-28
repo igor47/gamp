@@ -1,6 +1,4 @@
-#!/usr/bin/env python
-
-import eyeD3
+#!/usr/bin/python
 
 import os
 import os.path
@@ -11,9 +9,7 @@ def set_track(filename):
    track_str = just_name.split()[0]
    track_num = int(track_str)
 
-   audiofile = eyeD3.load(filename)
-   audiofile.tag.track_num = track_num
-   audiofile.tag.save()
+   os.system("mp3info -n %d '%s'" % (track_num, filename))
 
 def set_all(directory):
    filenames = os.listdir(directory)
