@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import eyed3
+import eyeD3
 
 import os
 import os.path
@@ -11,7 +11,7 @@ def set_track(filename):
    track_str = just_name.split()[0]
    track_num = int(track_str)
 
-   audiofile = eyed3.load(filename)
+   audiofile = eyeD3.load(filename)
    audiofile.tag.track_num = track_num
    audiofile.tag.save()
 
